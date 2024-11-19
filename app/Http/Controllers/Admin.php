@@ -47,7 +47,7 @@ public function hapusSiswa($id){
 
     return redirect()->back()->with('success', 'Data siswa berhasil dihapus.');
 }
-public function EditSiswa($id){
+public function editSiswa($id){
     $datasiswa = Student::find($id);
 
     return view('Student.edit', compact('datasiswa'));
