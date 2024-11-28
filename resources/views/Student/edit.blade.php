@@ -9,7 +9,7 @@
 <body>
     <div class="container mt-4">
         <h3>Edit Data Siswa</h3>
-        <form action="{{ route('siswa.update', . $datasiswa->id) }}" method="post">
+        <form action="{{ route('siswa.update', $datasiswa->id) }}" method="post">
             @csrf
             @method('PUT') 
 

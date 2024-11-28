@@ -10,10 +10,10 @@ class Case_study extends Model
 {
     use HasFactory, SoftDeletes;
     protected $table = 'case_studies';
-    protected $primarykey = 'case_study_id';
-    protected $fillable =[
-    'point_id',
-    'student_id'
-];
-
+    protected $primarykey = 'id';
+    protected $fillable = [
+        'id',
+        'point_id',
+        'student_id'
+    ];
 }

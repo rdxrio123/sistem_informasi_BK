@@ -10,9 +10,10 @@ class Class_data extends Model
 {
     use HasFactory,SoftDeletes;
     protected $table = 'class_datas';
-    protected $primarykey = 'school_class_id';
+    protected $primarykey = 'id';
     protected $fillable =
     [
+        'id',
         'school_class_name',
         'school_class_major',
     ];

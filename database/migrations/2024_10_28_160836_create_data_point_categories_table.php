@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('data_point_categories', function (Blueprint $table) {
-            $table->id('category_id');
+            $table->id('id');
             $table->string('category_of_violatin');
             $table->integer('category_score_min');
             $table->integer('c');

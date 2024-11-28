@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Parents extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory, SoftDeletes;
     protected $table = 'parents';
-    protected $primarykey = 'parent_id';
-    protected $fillable =[
+    protected $primarykey = 'id';
+    protected $fillable = [
+        'id',
         'parent_full_name',
         'address',
         'job',
         'phone_number',
     ];
-
 }

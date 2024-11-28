@@ -10,7 +10,10 @@ class Point_data extends Model
 {
     use HasFactory,SoftDeletes;
     protected $table = 'point_datas';
-    protected $primarykey = 'point_id';
-    protected $fillable =['violation'];
+    protected $primarykey = 'id';
+    protected $fillable =[
+        'id',
+        'violation'
+    ];
 
 }

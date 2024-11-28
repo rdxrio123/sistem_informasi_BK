@@ -8,17 +8,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Data_point_category extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory, SoftDeletes;
     protected $table = 'data_point_categories';
-    protected $primarykey = 'category_id';
-    protected $fillable =[
-        
+    protected $primarykey = 'id';
+    protected $fillable = [
+        'id',
         'category_of_violatin',
         'category_score_min',
         'category_score_max'
 
 
 
-];
-
+    ];
 }

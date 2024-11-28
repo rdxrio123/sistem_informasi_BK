@@ -1,5 +1,13 @@
 <?php
+
 use App\Http\Controllers\Admin;
+use App\Http\Controllers\Achievement;
+use App\Http\Controllers\CaseStudy;
+use App\Http\Controllers\ClassData;
+use App\Http\Controllers\DataPointCategory;
+use App\Http\Controllers\Parents;
+use App\Http\Controllers\PointData;
+use App\Http\Controllers\Student;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,8 +30,7 @@ Route::get('/', function () {
 Route::get('dashboard', [Admin::class, 'index']);
 Route::get('/siswa', [Admin::class, 'Siswa']);
 Route::get('/tambah', [Admin::class, 'tambahSiswa']);
-Route::post('simpan',[Admin::class,'simpanSiswa']);
-Route::get('/hapus/{id}',[Admin::class, 'hapusSiswa'])->name('siswa.hapus');
-Route::get('/edit/{id}',[Admin::class, 'EditSiswa'])->name('siswa.edit');
-Route::put('/update/{id}',[Admin::class,'updateSiswa'])->name('siswa.update');
-
+Route::post('simpan', [Admin::class, 'simpanSiswa']);
+Route::get('/hapus/{id}', [Admin::class, 'hapusSiswa'])->name('siswa.hapus');
+Route::get('/edit/{id}', [Admin::class, 'editSiswa'])->name('siswa.edit');
+Route::post('/update/{id}', [Admin::class, 'updateSiswa'])->name('siswa.update');
