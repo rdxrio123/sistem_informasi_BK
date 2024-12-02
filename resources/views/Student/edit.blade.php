@@ -19,7 +19,7 @@
                 <i class="bi bi-arrow-left"></i> <!-- Icon panah kiri -->
             </a>
 
-        <form action="{{ route('Siswa.update'. $datasiswa->id) }}" method="post">
+        <form action="{{ route('Siswa.update' $datasiswa->id) }}" method="post">
             @csrf
             @method('PUT') 
 
