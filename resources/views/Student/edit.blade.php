@@ -1,3 +1,7 @@
+@extends('dashboard')
+
+@section('content')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +12,14 @@
 </head>
 <body>
     <div class="container mt-4">
-        <h3>Edit Data Siswa</h3>
-        <form action="{{ route('siswa.update', $datasiswa->id) }}" method="post">
+        <h1>Edit Data Siswa</h1>
+        <div class="pagetitle d-flex align-items-center">
+            <!-- Tombol Kembali -->
+            <a href="{{ url()->previous() }}" class="btn btn-outline-primary me-3">
+                <i class="bi bi-arrow-left"></i> <!-- Icon panah kiri -->
+            </a>
+
+        <form action="{{ route('Siswa.update'. $datasiswa->id) }}" method="post">
             @csrf
             @method('PUT') 
 
@@ -53,3 +63,4 @@
     </div>
 </body>
 </html>
+@endsection

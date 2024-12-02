@@ -22,15 +22,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('template');
 });
 
 
 
-Route::get('dashboard', [Admin::class, 'index']);
+Route::get('template', [Admin::class, 'index']);
 Route::get('/siswa', [Admin::class, 'Siswa']);
 Route::get('/tambah', [Admin::class, 'tambahSiswa']);
 Route::post('simpan', [Admin::class, 'simpanSiswa']);
 Route::get('/hapus/{id}', [Admin::class, 'hapusSiswa'])->name('siswa.hapus');
 Route::get('/edit/{id}', [Admin::class, 'editSiswa'])->name('siswa.edit');
-Route::post('/update/{id}', [Admin::class, 'updateSiswa'])->name('siswa.update');
+Route::put('/update/{id}', [Admin::class, 'updateSiswa'])->name('Siswa.update');

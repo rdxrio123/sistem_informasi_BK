@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Class_data extends Model
+class ClassData extends Model
 {
     use HasFactory,SoftDeletes;
     protected $table = 'class_datas';
