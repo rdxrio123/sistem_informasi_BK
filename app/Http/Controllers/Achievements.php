@@ -37,7 +37,7 @@ class Achievements extends Controller
             'achievement_date' => $request->achievement_date,
             'achievement_level' => $request->achievement_level,
             'achievement_category' => $request->achievement_category,
-            'achievement_status' =>$request->achievement_status,
+            'achievement_status' => $request->achievement_status,
         ]);
 
         return redirect('dataprestasi');
@@ -58,13 +58,13 @@ class Achievements extends Controller
     {
         $dataprestasi = Achievement::find($id);
         $datasiswa = Student::all();
-        return view('Achievement.edit', compact('dataprestasi','datasiswa'));
+        return view('Achievement.edit', compact('dataprestasi', 'datasiswa'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function updateAchievement(Request $request,$id)
+    public function updateAchievement(Request $request, $id)
     {
         $dataprestasi = Achievement::find($id);
         $dataprestasi->student_id = $request->student_id;
@@ -88,7 +88,7 @@ class Achievements extends Controller
         $dataprestasi = Achievement::find($id);
 
         $dataprestasi->delete();
-        
+
         return redirect()->back();
     }
 }

@@ -1,4 +1,3 @@
-
 <!-- ======= Header ======= -->
 
 <aside id="sidebar" class="sidebar">
@@ -6,7 +5,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link " href="{{url('template')}}">
+            <a class="nav-link " href="{{ url('template') }}">
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
             </a>
@@ -20,20 +19,20 @@
             </a>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{url('kelas')}}">
+            <a class="nav-link collapsed" href="{{ url('kelas') }}">
                 <i class="bi bi-building"></i><span>Class</span><i class=""></i>
             </a>
         </li><!-- End Forms Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{url('studykasus')}}">
+            <a class="nav-link collapsed" href="{{ url('studykasus') }}">
                 <i class="bi-journal-bookmark"></i><span>Case Study</span><i class=""></i>
             </a>
 
         </li><!-- End Tables Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{url('ortu')}}">
+            <a class="nav-link collapsed" href="{{ url('ortu') }}">
                 <i class="bi bi-people"></i><span>Parents</span><i class=""></i>
             </a>
 
@@ -44,21 +43,21 @@
         <li class="nav-heading">INFORMATION</li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{url('point')}}">
+            <a class="nav-link collapsed" href="{{ url('point') }}">
                 <i class="bi bi-star"></i>
                 <span>Point</span>
             </a>
         </li><!-- End Profile Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{url('kategori')}}">
+            <a class="nav-link collapsed" href="{{ url('kategori') }}">
                 <i class="bi bi-bar-chart-steps"></i>
                 <span>Point Category</span>
             </a>
         </li><!-- End F.A.Q Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{url('dataprestasi')}}">
+            <a class="nav-link collapsed" href="{{ url('dataprestasi') }}">
                 <i class="bi bi-trophy"></i>
                 <span>Achievement</span>
             </a>

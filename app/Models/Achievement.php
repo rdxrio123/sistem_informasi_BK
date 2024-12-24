@@ -11,7 +11,7 @@ class Achievement extends Model
     use HasFactory, SoftDeletes;
     protected $table = 'achievements';
     protected $primarykey = 'achievement_id';
-    protected $fillable =[
+    protected $fillable = [
         'student_id',
         'achievement_name',
         'achievement_date',
@@ -23,5 +23,4 @@ class Achievement extends Model
     {
         return $this->belongsTo(Student::class);
     }
-
 }

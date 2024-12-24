@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +10,7 @@
 <body>
 
     <!-- ======= Header ======= -->
-@include('include.header')
+    @include('include.header')
     </header><!-- End Header -->
 
     <!-- ======= Sidebar ======= -->
@@ -56,12 +55,13 @@
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $data->id }}</td>
                                     <td>{{ $data->datapoint->point_number ?? 'N/A' }}</td>
-                                    <td>{{ $data->student->full_name  ?? 'N/A'}}</td>
+                                    <td>{{ $data->student->full_name ?? 'N/A' }}</td>
                                     {{-- <td><a href="{{ url('editSiswa/' .$siswa->id) }}"><i class="bi bi-trash"></i></a> --}}
-                                        <td><a href="{{ url('/editstudykasus/'. $data->id) }}"><i class="bi bi-file-text"></i></a>
+                                    <td><a href="{{ url('/editstudykasus/' . $data->id) }}"><i
+                                                class="bi bi-file-text"></i></a>
                                     </td>
                                     <td>
-                                        <a href="{{ url('hapusstudykasus/'. $data->id) }}"
+                                        <a href="{{ url('hapusstudykasus/' . $data->id) }}"
                                             onclick="return confirm('Yakin ingin menghapus data ini?')">
                                             <i class="bi bi-trash" style="color:red;"></i>
                                         </a>

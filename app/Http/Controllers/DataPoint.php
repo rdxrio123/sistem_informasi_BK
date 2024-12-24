@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PointData;
+
 class DataPoint extends Controller
 {
     /**
@@ -55,7 +56,7 @@ class DataPoint extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function updatePoint(Request $request,$id)
+    public function updatePoint(Request $request, $id)
     {
         $data = PointData::find($id);
 

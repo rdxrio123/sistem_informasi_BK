@@ -18,7 +18,7 @@ class Admin extends Controller
     //Menampilkan Halaman Siswa
     public function Siswa()
     {
-        $data = Student::with('class','parent')->get();
+        $data = Student::with('class', 'parent')->get();
         return view('Student.siswa', ['datasiswa' => $data]);
     }
 
@@ -26,7 +26,7 @@ class Admin extends Controller
     {
         $datakelas = ClassData::all();
         $dataparent = Parents::all();
-        return view('Student.tambah', compact('datakelas','dataparent'));
+        return view('Student.tambah', compact('datakelas', 'dataparent'));
     }
 
     public function simpanSiswa(Request $request)
@@ -54,13 +54,13 @@ class Admin extends Controller
 
         return redirect()->back()->with('success', 'Data siswa berhasil dihapus.');
     }
-     public function editSiswa($id)
+    public function editSiswa($id)
     {
         $datakelas = ClassData::all();
         $dataparent = Parents::all();
         $datasiswa = Student::find($id);
 
-        return view('Student.edit', compact('datasiswa','datakelas','dataparent'));
+        return view('Student.edit', compact('datasiswa', 'datakelas', 'dataparent'));
     }
 
     public function updateSiswa(Request $request, $id)

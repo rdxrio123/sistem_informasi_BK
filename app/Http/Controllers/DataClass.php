@@ -12,8 +12,8 @@ class DataClass extends Controller
      */
     public function classData()
     {
-       $data = ClassData::all();
-       return view('Class.class', ['datakelas' => $data]);
+        $data = ClassData::all();
+        return view('Class.class', ['datakelas' => $data]);
     }
 
     /**
@@ -59,7 +59,7 @@ class DataClass extends Controller
 
         $datakelas->school_class_name = $request->school_class_name;
         $datakelas->school_class_major = $request->school_class_major;
-       
+
 
 
         $datakelas->save();
@@ -76,6 +76,5 @@ class DataClass extends Controller
 
         $data->delete();
         return redirect()->back()->with('success', 'Data siswa berhasil dihapus.');
-
     }
 }

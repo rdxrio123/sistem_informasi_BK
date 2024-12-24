@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  
+
     @include('include.style ')
 
 </head>
@@ -10,7 +10,7 @@
 <body>
 
     <!-- ======= Header ======= -->
- @include('include.header')
+    @include('include.header')
 
     <!-- ======= Sidebar ======= -->
     @include('include.sidebar')

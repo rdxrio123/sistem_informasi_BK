@@ -14,7 +14,7 @@ class CaseReport extends Controller
      */
     public function indexCaseReport()
     {
-        $data = CaseStudy::with('datapoint','student')->get();
+        $data = CaseStudy::with('datapoint', 'student')->get();
         return view('CaseStudy.studykasus', ['datastudykasus' => $data]);
     }
 
@@ -25,7 +25,7 @@ class CaseReport extends Controller
     {
         $datapoint = PointData::all();
         $datasiswa = Student::all();
-        return view('CaseStudy.tambah', compact('datapoint','datasiswa'));
+        return view('CaseStudy.tambah', compact('datapoint', 'datasiswa'));
     }
 
     /**
@@ -57,7 +57,7 @@ class CaseReport extends Controller
         $data = CaseStudy::find($id);
         $datapoint = PointData::all();
         $datasiswa = Student::all();
-        return view('CaseStudy.edit', compact('data','datasiswa','datapoint'));
+        return view('CaseStudy.edit', compact('data', 'datasiswa', 'datapoint'));
     }
 
     /**
@@ -66,7 +66,7 @@ class CaseReport extends Controller
     public function updateCaseReport(Request $request, $id)
     {
         $data = CaseStudy::find($id);
-        
+
         $data->point_number = $request->point_number;
         $data->student_id = $request->student_id;
 
@@ -78,7 +78,7 @@ class CaseReport extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroyCaseReport( $id)
+    public function destroyCaseReport($id)
     {
         $data = CaseStudy::find($id);
         $data->delete();

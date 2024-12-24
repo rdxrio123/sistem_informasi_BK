@@ -16,8 +16,7 @@
                 <select class="form-control select2" style="width: 100%;" name="point_number" id="point_number">
                     <option disabled value="">Choose Point</option>
                     @foreach ($datapoint as $item)
-                        <option value="{{ $item->id }}" 
-                                {{ $data->point_number == $item->id ? 'selected' : '' }}>
+                        <option value="{{ $item->id }}" {{ $data->point_number == $item->id ? 'selected' : '' }}>
                             {{ $item->point_number }}
                         </option>
                     @endforeach
@@ -29,8 +28,7 @@
                 <select class="form-control select2" style="width: 100%;" name="student_id" id="student_id">
                     <option disabled value="">Choose Student</option>
                     @foreach ($datasiswa as $item)
-                        <option value="{{ $item->id }}" 
-                                {{ $data->student_id == $item->id ? 'selected' : '' }}>
+                        <option value="{{ $item->id }}" {{ $data->student_id == $item->id ? 'selected' : '' }}>
                             {{ $item->full_name }}
                         </option>
                     @endforeach

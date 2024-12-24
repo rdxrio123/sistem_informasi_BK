@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +10,7 @@
 <body>
 
     <!-- ======= Header ======= -->
-@include('include.header')
+    @include('include.header')
     </header><!-- End Header -->
 
     <!-- ======= Sidebar ======= -->
@@ -58,10 +57,11 @@
                                     <td>{{ $kelas->school_class_name }}</td>
                                     <td>{{ $kelas->school_class_major }}</td>
                                     {{-- <td><a href="{{ url('editSiswa/' .$siswa->id) }}"><i class="bi bi-trash"></i></a> --}}
-                                        <td><a href="{{ url('/editkelas/'. $kelas->id) }}"><i class="bi bi-file-text"></i></a>
+                                    <td><a href="{{ url('/editkelas/' . $kelas->id) }}"><i
+                                                class="bi bi-file-text"></i></a>
                                     </td>
                                     <td>
-                                        <a href="{{ url('hapuskelas/'. $kelas->id) }}"
+                                        <a href="{{ url('hapuskelas/' . $kelas->id) }}"
                                             onclick="return confirm('Yakin ingin menghapus data ini?')">
                                             <i class="bi bi-trash" style="color:red;"></i>
                                         </a>

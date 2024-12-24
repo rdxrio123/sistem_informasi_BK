@@ -15,8 +15,8 @@
 
     <main id="main" class="main">
         <div class="col-md-9">
-        @yield("kontent")
-    </div>
+            @yield('kontent')
+        </div>
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->

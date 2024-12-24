@@ -61,7 +61,7 @@
                                     <td>{{ $siswa->id }}</td>
                                     <td>{{ $siswa->full_name }}</td>
                                     <td>{{ $siswa->nis }}</td>
-                                    <td>{{ $siswa->class->school_class_name}}</td>
+                                    <td>{{ $siswa->class->school_class_name }}</td>
                                     <td>{{ $siswa->parent->parent_full_name }}</td>
                                     <td>{{ $siswa->date_of_birth }}</td>
                                     <td>{{ $siswa->address }}</td>

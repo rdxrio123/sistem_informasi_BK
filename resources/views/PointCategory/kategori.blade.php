@@ -57,11 +57,12 @@
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $data->id }}</td>
                                     <td>{{ $data->category_of_violation }}</td>
-                                    <td>{{$data->category_score_min}}</td>
-                                    <td>{{$data->category_score_max}}</td> 
-                                    <td>{{$data->follow_up}}</td>
+                                    <td>{{ $data->category_score_min }}</td>
+                                    <td>{{ $data->category_score_max }}</td>
+                                    <td>{{ $data->follow_up }}</td>
                                     {{-- <td><a href="{{ url('editSiswa/' .$siswa->id) }}"><i class="bi bi-trash"></i></a> --}}
-                                    <td><a href="{{ url('/editkategori/' . $data->id) }}"><i class="bi bi-file-text"></i></a>
+                                    <td><a href="{{ url('/editkategori/' . $data->id) }}"><i
+                                                class="bi bi-file-text"></i></a>
                                     </td>
                                     <td>
                                         <a href="{{ url('/hapuskategori/' . $data->id) }}"

@@ -55,9 +55,10 @@
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $point->id }}</td>
                                     <td>{{ $point->violation }}</td>
-                                    <td>{{$point->point_number}}</td>
+                                    <td>{{ $point->point_number }}</td>
                                     {{-- <td><a href="{{ url('editSiswa/' .$siswa->id) }}"><i class="bi bi-trash"></i></a> --}}
-                                    <td><a href="{{ url('/editpoint/' . $point->id) }}"><i class="bi bi-file-text"></i></a>
+                                    <td><a href="{{ url('/editpoint/' . $point->id) }}"><i
+                                                class="bi bi-file-text"></i></a>
                                     </td>
                                     <td>
                                         <a href="{{ url('hapuspoint/' . $point->id) }}"
@@ -84,7 +85,7 @@
         </section>
 
     </main><!-- End #main -->
-    
+
     <!-- ======= Footer ======= -->
     @include('include.footer')
 
@@ -96,5 +97,3 @@
 </body>
 
 </html>
-
-

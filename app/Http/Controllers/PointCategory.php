@@ -59,7 +59,7 @@ class PointCategory extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function updatePointCategory(Request $request,$id)
+    public function updatePointCategory(Request $request, $id)
     {
         $data = DataPointCategory::find($id);
         $data->category_of_violation = $request->category_of_violation;

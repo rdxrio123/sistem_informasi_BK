@@ -17,11 +17,12 @@ class CaseStudy extends Model
         'student_id',
     ];
 
-    public function datapoint(){
+    public function datapoint()
+    {
         return $this->belongsTo(PointData::class, 'point_number', 'id');
     }
-    public function student(){
+    public function student()
+    {
         return $this->belongsTo(Student::class);
     }
-
 }

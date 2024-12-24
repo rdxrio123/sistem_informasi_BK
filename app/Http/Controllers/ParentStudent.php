@@ -13,7 +13,7 @@ class ParentStudent extends Controller
     public function parentData()
     {
         $data = Parents::all();
-        return view('Parents.parent',['parentdata' => $data]);
+        return view('Parents.parent', ['parentdata' => $data]);
     }
 
     /**
@@ -68,13 +68,11 @@ class ParentStudent extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroyParent( $id)
+    public function destroyParent($id)
     {
         $data = Parents::find($id);
 
         $data->delete();
         return redirect()->back()->with('success', 'Data siswa berhasil dihapus.');
-
-    
     }
 }
