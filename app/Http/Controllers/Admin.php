@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\ClassData;
+use App\Models\Parents;
 
 class Admin extends Controller
 {
@@ -16,20 +18,21 @@ class Admin extends Controller
     //Menampilkan Halaman Siswa
     public function Siswa()
     {
-        $datasiswa = Student::all();
-        return view('Student.siswa', ['datasiswa' => $datasiswa]);
+        $data = Student::with('class','parent')->get();
+        return view('Student.siswa', ['datasiswa' => $data]);
     }
 
     public function tambahSiswa()
     {
-        return view('Student.tambah');
+        $datakelas = ClassData::all();
+        $dataparent = Parents::all();
+        return view('Student.tambah', compact('datakelas','dataparent'));
     }
 
     public function simpanSiswa(Request $request)
     {
 
         Student::create([
-            'id' => $request->id,
             'full_name' => $request->full_name,
             'nis' => $request->nis,
             'class_id' => $request->class_id,
@@ -40,7 +43,7 @@ class Admin extends Controller
         ]);
 
 
-        return redirect('/siswa')->with('success', 'Data siswa berhasil disimpan.');
+        return redirect('siswa')->with('success', 'Data siswa berhasil disimpan.');
     }
 
     public function hapusSiswa($id)
@@ -51,11 +54,13 @@ class Admin extends Controller
 
         return redirect()->back()->with('success', 'Data siswa berhasil dihapus.');
     }
-    public function editSiswa($id)
+     public function editSiswa($id)
     {
+        $datakelas = ClassData::all();
+        $dataparent = Parents::all();
         $datasiswa = Student::find($id);
 
-        return view('Student.edit', compact('datasiswa'));
+        return view('Student.edit', compact('datasiswa','datakelas','dataparent'));
     }
 
     public function updateSiswa(Request $request, $id)
@@ -74,6 +79,6 @@ class Admin extends Controller
 
         $datasiswa->save();
 
-        return redirect('Student.siswa')->with('success', 'Data siswa berhasil diperbarui.');
+        return redirect()->route('siswa.tampil')->with('success', 'Data siswa berhasil diperbarui.');
     }
 }

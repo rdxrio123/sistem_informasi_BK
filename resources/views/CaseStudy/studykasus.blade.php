@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,7 @@
 <body>
 
     <!-- ======= Header ======= -->
-    @include('include.header')
+@include('include.header')
     </header><!-- End Header -->
 
     <!-- ======= Sidebar ======= -->
@@ -19,7 +20,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Student Table</h1>
+            <h1>Class Study</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -29,23 +30,18 @@
         </div><!-- End Page Title -->
 
 
-        <div class="col-12">
+        <div class="col-100">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Student Table</span></h5>
-                    <a href="{{ url('tambah') }}" class="btn btn-primary">Add</a>
+                    <h5 class="card-title">Case Report</span></h5>
+                    <a href="{{ url('tambahstudykasus') }}" class="btn btn-primary">ADD</a>
                     <table class="table table-border">
                         <thead>
                             <tr>
                                 <th scope="col">No</th>
-                                <th scope="col">Student ID</th>
+                                <th scope="col">ID Case Study</th>
+                                <th scope="col">Point</th>
                                 <th scope="col">Student Name</th>
-                                <th scope="col">NIS</th>
-                                <th scope="col">Class</th>
-                                <th scope="col">Parent</th>
-                                <th scope="col">Month Date Year</th>
-                                <th scope="col">Address</th>
-                                <th scope="col">Phone Number</th>
                                 <th scope="col" colspan="2">Action</th>
 
 
@@ -55,22 +51,17 @@
                         </thead>
                         <tbody>
                             @php $no = 1 @endphp
-                            @foreach ($datasiswa as $siswa)
+                            @foreach ($datastudykasus as $data)
                                 <tr>
                                     <td>{{ $no++ }}</td>
-                                    <td>{{ $siswa->id }}</td>
-                                    <td>{{ $siswa->full_name }}</td>
-                                    <td>{{ $siswa->nis }}</td>
-                                    <td>{{ $siswa->class->school_class_name}}</td>
-                                    <td>{{ $siswa->parent->parent_full_name }}</td>
-                                    <td>{{ $siswa->date_of_birth }}</td>
-                                    <td>{{ $siswa->address }}</td>
-                                    <td>{{ $siswa->phone_number }}</td>
+                                    <td>{{ $data->id }}</td>
+                                    <td>{{ $data->datapoint->point_number ?? 'N/A' }}</td>
+                                    <td>{{ $data->student->full_name  ?? 'N/A'}}</td>
                                     {{-- <td><a href="{{ url('editSiswa/' .$siswa->id) }}"><i class="bi bi-trash"></i></a> --}}
-                                    <td><a href="{{ url('/edit/' . $siswa->id) }}"><i class="bi bi-file-text"></i></a>
+                                        <td><a href="{{ url('/editstudykasus/'. $data->id) }}"><i class="bi bi-file-text"></i></a>
                                     </td>
                                     <td>
-                                        <a href="{{ url('hapus/' . $siswa->id) }}"
+                                        <a href="{{ url('hapusstudykasus/'. $data->id) }}"
                                             onclick="return confirm('Yakin ingin menghapus data ini?')">
                                             <i class="bi bi-trash" style="color:red;"></i>
                                         </a>

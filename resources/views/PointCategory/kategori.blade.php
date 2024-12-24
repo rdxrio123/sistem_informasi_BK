@@ -19,7 +19,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Student Table</h1>
+            <h1>Points Categories</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -32,20 +32,17 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Student Table</span></h5>
-                    <a href="{{ url('tambah') }}" class="btn btn-primary">Add</a>
+                    <h5 class="card-title">Points Categories Table</span></h5>
+                    <a href="{{ url('tambahkategori') }}" class="btn btn-primary">Add</a>
                     <table class="table table-border">
                         <thead>
                             <tr>
                                 <th scope="col">No</th>
-                                <th scope="col">Student ID</th>
-                                <th scope="col">Student Name</th>
-                                <th scope="col">NIS</th>
-                                <th scope="col">Class</th>
-                                <th scope="col">Parent</th>
-                                <th scope="col">Month Date Year</th>
-                                <th scope="col">Address</th>
-                                <th scope="col">Phone Number</th>
+                                <th scope="col">PointCategory ID</th>
+                                <th scope="col">Category of Violation</th>
+                                <th scope="col">Min Score</th>
+                                <th scope="col">Max Score</th>
+                                <th scope="col">Follow Up</th>
                                 <th scope="col" colspan="2">Action</th>
 
 
@@ -55,22 +52,19 @@
                         </thead>
                         <tbody>
                             @php $no = 1 @endphp
-                            @foreach ($datasiswa as $siswa)
+                            @foreach ($datakategori as $data)
                                 <tr>
                                     <td>{{ $no++ }}</td>
-                                    <td>{{ $siswa->id }}</td>
-                                    <td>{{ $siswa->full_name }}</td>
-                                    <td>{{ $siswa->nis }}</td>
-                                    <td>{{ $siswa->class->school_class_name}}</td>
-                                    <td>{{ $siswa->parent->parent_full_name }}</td>
-                                    <td>{{ $siswa->date_of_birth }}</td>
-                                    <td>{{ $siswa->address }}</td>
-                                    <td>{{ $siswa->phone_number }}</td>
+                                    <td>{{ $data->id }}</td>
+                                    <td>{{ $data->category_of_violation }}</td>
+                                    <td>{{$data->category_score_min}}</td>
+                                    <td>{{$data->category_score_max}}</td> 
+                                    <td>{{$data->follow_up}}</td>
                                     {{-- <td><a href="{{ url('editSiswa/' .$siswa->id) }}"><i class="bi bi-trash"></i></a> --}}
-                                    <td><a href="{{ url('/edit/' . $siswa->id) }}"><i class="bi bi-file-text"></i></a>
+                                    <td><a href="{{ url('/editkategori/' . $data->id) }}"><i class="bi bi-file-text"></i></a>
                                     </td>
                                     <td>
-                                        <a href="{{ url('hapus/' . $siswa->id) }}"
+                                        <a href="{{ url('/hapuskategori/' . $data->id) }}"
                                             onclick="return confirm('Yakin ingin menghapus data ini?')">
                                             <i class="bi bi-trash" style="color:red;"></i>
                                         </a>
@@ -95,7 +89,6 @@
 
     </main><!-- End #main -->
 
-    <!-- ======= Footer ======= -->
     @include('include.footer')
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i

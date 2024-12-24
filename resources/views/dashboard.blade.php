@@ -2,14 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>Sistem - Management BK</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
     @include('include.style')
-
 </head>
 
 <body>
@@ -21,7 +14,9 @@
     @include('include.sidebar')
 
     <main id="main" class="main">
-        @yield('content')
+        <div class="col-md-9">
+        @yield("kontent")
+    </div>
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->

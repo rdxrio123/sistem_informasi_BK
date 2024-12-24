@@ -1,66 +1,88 @@
 @extends('dashboard')
-
-@section('content')
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Siswa</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-<body>
-    <div class="container mt-4">
-        <h1>Edit Data Siswa</h1>
-        <div class="pagetitle d-flex align-items-center">
-            <!-- Tombol Kembali -->
-            <a href="{{ url()->previous() }}" class="btn btn-outline-primary me-3">
-                <i class="bi bi-arrow-left"></i> <!-- Icon panah kiri -->
-            </a>
-
-        <form action="{{ route('Siswa.update'. $datasiswa->id) }}" method="post">
-            @csrf
-            @method('PUT') 
-
-            <div class="mb-3">
-                <label for="full_name" class="form-label">Nama Siswa</label>
-                <input type="text" id="full_name" name="full_name" class="form-control" value="{{ $datasiswa->full_name }}" required>
+@section('kontent')
+    <main id="main" class="main">
+            <div class="container mt-4">
+                <div class="pagetitle d-flex align-items-center">
+                    <!-- Tombol Kembali -->
+                    <a href="{{ url()->previous() }}" class="btn btn-outline-primary me-3">
+                        <i class="bi bi-arrow-left"></i> <!-- Icon panah kiri -->
+                    </a>
+                    <h1>Edit Student Data</h1>
+                </div><!-- End Page Title -->
+        
+                <form action="{{ url('/update/' . $datasiswa->id) }}" method="post">
+        
+                    @csrf
+        
+                    <div class="mb-3">
+                        Student Name:
+                        <input type="text" id="full_name" name="full_name" class="form-control"
+                            value="{{ $datasiswa->full_name }}" required>
+                    </div>
+        
+                    <div class="mb-3">
+                        NIS:
+                        <input type="text" id="nis" name="nis" class="form-control" value="{{ $datasiswa->nis }}"
+                            required>
+                    </div>
+        
+                    <div class="mb-3">
+                        <label for="class_id" class="form-label">Class:</label>
+                        <select class="form-control select2" style="width: 100%;" name="class_id" id="class_id">
+                            <option disabled value="">Choose Class</option> <!-- Opsi default -->
+                            @foreach ($datakelas as $item)
+                                <option value="{{ $item->id }}" {{ $datasiswa->class_id == $item->id ? 'selected' : '' }}>
+                                    {{ $item->school_class_name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="parent_id" class="form-label">Parent:</label>
+                        <select class="form-control select2" style="width: 100%;" name="parent_id" id="parent_id">
+                            <option disabled value="">Choose Parent</option> <!-- Opsi default -->
+                            @foreach ($dataparent as $item)
+                                <option value="{{ $item->id }}" {{ $datasiswa->parent_id == $item->id ? 'selected' : '' }}>
+                                    {{ $item->parent_full_name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+            
+        
+                    <div class="mb-3">
+                       Month Date Year:
+                        <input type="date" id="date_of_birth" name="date_of_birth" class="form-control"
+                            value="{{ $datasiswa->date_of_birth }}" required>
+                    </div>
+        
+                    <div class="mb-3">
+                       Address:
+                        <input type="text" id="address" name="address" class="form-control" value="{{ $datasiswa->address }}"
+                            required>
+                    </div>
+        
+                    <div class="mb-3">
+                    <label for="phone_number" class="form-label">Phone Number:</label>
+                    <input type="text" id="phone_number" name="phone_number" class="form-control" 
+                           value="{{ $datasiswa->phone_number }}" required>
+                </div>
+        
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
             </div>
+        
+    </main><!-- End #main -->
 
-            <div class="mb-3">
-                <label for="nis" class="form-label">NIS</label>
-                <input type="text" id="nis" name="nis" class="form-control" value="{{ $datasiswa->nis }}" required>
-            </div>
+    <!-- ======= Footer ======= -->
+    @include('include.footer')
 
-            <div class="mb-3">
-                <label for="class_id" class="form-label">Kelas</label>
-                <input type="text" id="class_id" name="class_id" class="form-control" value="{{ $datasiswa->class_id }}" required>
-            </div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+    @include('include.script')
 
-            <div class="mb-3">
-                <label for="parent_id" class="form-label">Orang Tua/Mewakili</label>
-                <input type="text" id="parent_id" name="parent_id" class="form-control" value="{{ $datasiswa->parent_id }}" required>
-            </div>
 
-            <div class="mb-3">
-                <label for="date_of_birth" class="form-label">Tanggal Lahir</label>
-                <input type="date" id="date_of_birth" name="date_of_birth" class="form-control" value="{{ $datasiswa->date_of_birth }}" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="address" class="form-label">Alamat</label>
-                <input type="text" id="address" name="address" class="form-control" value="{{ $datasiswa->address }}" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="phone_number" class="form-label">No. Telepon</label>
-                <input type="text" id="phone_number" name="phone_number" class="form-control" value="{{ $datasiswa->phone_number }}" required>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Update</button>
-        </form>
-    </div>
 </body>
+
 </html>
-@endsection

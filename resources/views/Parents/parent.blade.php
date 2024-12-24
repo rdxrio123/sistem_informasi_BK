@@ -19,7 +19,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Student Table</h1>
+            <h1>Parents Table</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -32,19 +32,16 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Student Table</span></h5>
-                    <a href="{{ url('tambah') }}" class="btn btn-primary">Add</a>
+                    <h5 class="card-title">Parents Table</span></h5>
+                    <a href="{{ url('tambahparent') }}" class="btn btn-primary">Add</a>
                     <table class="table table-border">
                         <thead>
                             <tr>
                                 <th scope="col">No</th>
-                                <th scope="col">Student ID</th>
-                                <th scope="col">Student Name</th>
-                                <th scope="col">NIS</th>
-                                <th scope="col">Class</th>
-                                <th scope="col">Parent</th>
-                                <th scope="col">Month Date Year</th>
+                                <th scope="col">Parents ID</th>
+                                <th scope="col">Parents Name</th>
                                 <th scope="col">Address</th>
+                                <th scope="col">Job</th>
                                 <th scope="col">Phone Number</th>
                                 <th scope="col" colspan="2">Action</th>
 
@@ -55,22 +52,20 @@
                         </thead>
                         <tbody>
                             @php $no = 1 @endphp
-                            @foreach ($datasiswa as $siswa)
+                            @foreach ($parentdata as $parent)
                                 <tr>
                                     <td>{{ $no++ }}</td>
-                                    <td>{{ $siswa->id }}</td>
-                                    <td>{{ $siswa->full_name }}</td>
-                                    <td>{{ $siswa->nis }}</td>
-                                    <td>{{ $siswa->class->school_class_name}}</td>
-                                    <td>{{ $siswa->parent->parent_full_name }}</td>
-                                    <td>{{ $siswa->date_of_birth }}</td>
-                                    <td>{{ $siswa->address }}</td>
-                                    <td>{{ $siswa->phone_number }}</td>
+                                    <td>{{ $parent->id }}</td>
+                                    <td>{{ $parent->parent_full_name }}</td>
+                                    <td>{{ $parent->address }}</td>
+                                    <td>{{ $parent->job }}</td>
+                                    <td>{{ $parent->phone_number }}</td>
                                     {{-- <td><a href="{{ url('editSiswa/' .$siswa->id) }}"><i class="bi bi-trash"></i></a> --}}
-                                    <td><a href="{{ url('/edit/' . $siswa->id) }}"><i class="bi bi-file-text"></i></a>
+                                    <td><a href="{{ url('/editparent/' . $parent->id) }}"><i
+                                                class="bi bi-file-text"></i></a>
                                     </td>
                                     <td>
-                                        <a href="{{ url('hapus/' . $siswa->id) }}"
+                                        <a href="{{ url('/hapusparent/' . $parent->id) }}"
                                             onclick="return confirm('Yakin ingin menghapus data ini?')">
                                             <i class="bi bi-trash" style="color:red;"></i>
                                         </a>

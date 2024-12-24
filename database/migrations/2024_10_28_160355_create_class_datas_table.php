@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('class_datas', function (Blueprint $table) {
+        Schema::create('classdatas', function (Blueprint $table) {
             $table->id('id');
             $table->string('school_class_name');
-            $table->string('school_class_major'); 
+            $table->string('school_class_major');
             $table->timestamps();
             $table->softDeletes();
         });

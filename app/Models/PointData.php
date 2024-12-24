@@ -10,10 +10,15 @@ class PointData extends Model
 {
     use HasFactory,SoftDeletes;
     protected $table = 'point_datas';
-    protected $primarykey = 'id';
+    protected $primaryKey = 'id';
     protected $fillable =[
         'id',
-        'violation'
+        'violation',
+        'point_number',
     ];
+
+    public function caseStudy(){
+        return $this->hasMany(CaseStudy::class);
+    }
 
 }

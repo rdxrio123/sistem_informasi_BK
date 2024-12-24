@@ -19,5 +19,9 @@ class Achievement extends Model
         'achievement_category',
         'achievement_status'
     ];
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
 
 }

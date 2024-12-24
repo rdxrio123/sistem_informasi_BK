@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('case_studies', function (Blueprint $table) {
             $table->id('id');
-            $table->unsignedBigInteger('point_id');
+            $table->unsignedBigInteger('point_number');
             $table->unsignedBigInteger('student_id');
             $table->timestamps();
             $table->softDeletes();
         });
     }
-
+        
     /**
      * Reverse the migrations.
      */

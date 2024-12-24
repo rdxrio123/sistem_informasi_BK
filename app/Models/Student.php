@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Student extends Model
 {
-    use HasFactory, SoftDeletes; 
+    use HasFactory, SoftDeletes;
     protected $table = 'students';
-    protected $primarykey = 'id';
+    protected $primaryKey = 'id';
     protected $fillable = [
         'id',
         'full_name',
@@ -19,8 +19,25 @@ class Student extends Model
         'parent_id',
         'date_of_birth',
         'address',
-        'phone_number',
+        'phone_number'
     ];
 
-    
+    public function class()
+    {
+        return $this->belongsTo(ClassData::class);
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(Parents::class);
+    }
+
+    public function casestudy()
+    {
+        return $this->hasMany(CaseStudy::class);
+    }
+    public function achievement()
+    {
+        return $this->hasMany(Achievement::class);
+    }
 }

@@ -13,9 +13,10 @@ class DataPointCategory extends Model
     protected $primarykey = 'id';
     protected $fillable = [
         'id',
-        'category_of_violatin',
+        'category_of_violation',
         'category_score_min',
-        'category_score_max'
+        'category_score_max',
+        'follow_up'
 
 
 

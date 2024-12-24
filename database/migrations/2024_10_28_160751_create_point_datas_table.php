@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('point_datas', function (Blueprint $table) {
             $table->id('id');
             $table->string('violation');
+            $table->integer('point_number');
             $table->timestamps();
             $table->softDeletes();
         });

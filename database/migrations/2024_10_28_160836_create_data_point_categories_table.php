@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('data_point_categories', function (Blueprint $table) {
             $table->id('id');
-            $table->string('category_of_violatin');
+            $table->string('category_of_violation');
             $table->integer('category_score_min');
-            $table->integer('c');
+            $table->integer('category_score_max');
+            $table->string('follow_up');
             $table->timestamps();
             $table->softDeletes();
         });
